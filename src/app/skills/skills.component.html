@@ -1,0 +1,102 @@
+<!-- ========================================== -->
+<!-- INTEGRATED SKILLS SECTION WITH TOGGLE -->
+<!-- ========================================== -->
+<div class="skills-modern-container container" style="max-width: 100%;">
+  <!-- Skills Header with Integrated Toggle -->
+  <div class="skills-header-integrated">
+    <div class="title-section">
+      <div class="section-title-main">Technical Skills</div>
+      <div class="section-subtitle">Expertise & Proficiency Levels</div>
+    </div>
+    
+    <!-- Integrated View Toggle -->
+    <div class="view-toggle-integrated">
+      <div class="toggle-label">View Options:</div>
+      <div class="toggle-buttons-integrated">
+        <button class="toggle-btn-integrated" 
+                [class.active]="showProgressView" 
+                (click)="showProgressView = true">
+          <span class="btn-icon">📊</span>
+          <span class="btn-text">Progress Bars</span>
+        </button>
+        <button class="toggle-btn-integrated" 
+                [class.active]="!showProgressView" 
+                (click)="showProgressView = false">
+          <span class="btn-icon">🎯</span>
+          <span class="btn-text">Skill Cards</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Progress Bar View -->
+  <div class="skills-view-container" [style.display]="showProgressView ? 'block' : 'none'">
+    <div class="view-description">
+      <p>📊 <strong>Progress Bar View:</strong> Visual representation of skill proficiency levels with animated progress indicators</p>
+    </div>
+
+    <div class="skills-content">
+      <div class="skills-grid-progress">
+        <div class="skill-category-card" *ngFor="let section of techSections">
+          <div class="category-header">
+            <div class="category-icon" [ngClass]="getCategoryIcon(section.title)"></div>
+            <h3 class="category-title">{{ section.title }}</h3>
+          </div>
+          
+          <div class="skills-list-progress">
+            <div class="skill-item-progress" *ngFor="let item of section.items">
+              <div class="skill-info">
+                <span class="skill-name">{{ item.name }}</span>
+                <span class="skill-percentage">{{ item.value }}%</span>
+              </div>
+              <div class="modern-progress-container">
+                <div class="modern-progress-bar">
+                  <div class="modern-progress-fill animate" 
+                       [style.--target-width]="item.value + '%'"
+                       [ngClass]="getSkillLevel(item.value)">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card View -->
+  <div class="skills-view-container" [style.display]="!showProgressView ? 'block' : 'none'">
+    <div class="view-description">
+      <p>🎯 <strong>Skill Cards View:</strong> Clean card-based layout showcasing technologies with proficiency badges</p>
+    </div>
+    
+    <div class="skills-content">
+      <div class="skills-categories-grid">
+        <div class="category-section" *ngFor="let section of techSections">
+          <h3 class="category-title-cards">
+            <span class="category-icon-cards" [ngClass]="getCategoryIcon(section.title)"></span>
+            {{ section.title }}
+          </h3>
+          
+          <div class="skills-cards-grid">
+            <div class="skill-card" 
+                 *ngFor="let item of section.items"
+                 [ngClass]="getSkillCardClass(item.value)">
+              <div class="skill-card-content">
+                <div class="skill-card-name">{{ item.name }}</div>
+                <div class="skill-level-badge" [ngClass]="getSkillLevel(item.value)">
+                  {{ getSkillLevelText(item.value) }}
+                </div>
+              </div>
+              <div class="skill-card-overlay"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================ -->
+<!-- SEPARATOR - DELETE FROM HERE DOWN IF YOU DON'T LIKE OPTION 2 -->
+<!-- ================================================ -->

@@ -1,0 +1,147 @@
+.background-container {
+  background-image: url('../../assets/home-background3.jpg');
+  background-size: cover;
+  /* Cover the entire container */
+  background-position: center;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  min-height: 100vh;
+  /* Set minimum height to 100% of the viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  /* Set text color to white or any color that contrasts well with the background */
+  padding: 20px 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .background-container {
+    min-height: 100vh;
+    padding: 80px 15px 20px;
+    text-align: center;
+  }
+
+  .background-container .container {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+
+  .display-4 {
+    font-size: 2.5rem !important;
+  }
+
+  .display-6 {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .background-container {
+    padding: 70px 10px 20px;
+  }
+
+  .display-4 {
+    font-size: 2rem !important;
+  }
+
+  .display-6 {
+    font-size: 1.25rem !important;
+  }
+}
+
+/* Typewriter Effect */
+.typewriter-container {
+  font-size: xxx-large;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.typewriter-prefix,
+.typewriter-text {
+  min-height: 2em;
+  /* Prevent layout shift */
+  display: inline-block;
+  font-family: inherit;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.typewriter-prefix {
+  margin-right: 0.3em;
+}
+
+.fallback-text {
+  display: inline-block;
+  border-right: 2px solid #64b5f6;
+  animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #64b5f6; }
+}
+
+.cursor {
+  display: inline-block;
+  color: #64b5f6;
+  animation: blink 1s infinite;
+  font-weight: bold;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Mobile typewriter adjustments */
+@media (max-width: 768px) {
+  .typewriter-container {
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .typewriter-prefix,
+  .typewriter-text {
+    min-height: 1.8em;
+  }
+
+  .cursor {
+    margin-left: 1px;
+  }
+  
+  .typewriter-prefix {
+    margin-right: 0.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .typewriter-prefix,
+  .typewriter-text {
+    min-height: 1.5em;
+  }
+  
+  .typewriter-prefix {
+    margin-right: 0.15em;
+  }
+}

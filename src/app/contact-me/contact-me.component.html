@@ -1,0 +1,235 @@
+﻿<!-- ========================================== -->
+<!-- MODERN CONTACT ME SECTION -->
+<!-- ========================================== -->
+<div class="contact-modern-container">
+  <!-- Background Effects -->
+  <div class="contact-bg-effects">
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="contact-content">
+      <!-- Header Section -->
+      <div class="contact-header">
+        <div class="section-title-main">Get In Touch</div>
+        <div class="section-subtitle">Let's build something amazing together</div>
+        <div class="contact-intro">
+          I'm always excited to discuss new opportunities, innovative projects, or just have a chat about technology. 
+          Feel free to reach out through any of the channels below!
+        </div>
+      </div>
+
+      <!-- Contact Grid -->
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <div class="contact-form-section">
+          <div class="form-header">
+            <h3 class="form-title">📧 Send Me a Message</h3>
+            <p class="form-subtitle">I'll get back to you within 24 hours</p>
+          </div>
+
+          <form class="contact-form" #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+            <div class="form-group">
+              <label for="name" class="form-label">Full Name</label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                class="form-input" 
+                placeholder="Enter your full name"
+                ngModel
+                required>
+              <div class="input-highlight"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Email Address</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                class="form-input" 
+                placeholder="Enter your email"
+                ngModel
+                required>
+              <div class="input-highlight"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject" class="form-label">Subject</label>
+              <input 
+                type="text" 
+                id="subject" 
+                name="subject" 
+                class="form-input" 
+                placeholder="What's this about?"
+                ngModel
+                required>
+              <div class="input-highlight"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea 
+                id="message" 
+                name="message" 
+                class="form-textarea" 
+                rows="5" 
+                placeholder="Tell me about your project or idea..."
+                ngModel
+                required></textarea>
+              <div class="input-highlight"></div>
+            </div>
+
+            <button type="submit" class="submit-btn" [disabled]="!contactForm.valid || isSubmitting">
+              <span class="btn-icon" *ngIf="!isSubmitting">✉️</span>
+              <span class="btn-icon" *ngIf="isSubmitting">⏳</span>
+              <span class="btn-text">{{ isSubmitting ? 'Sending...' : 'Send Message' }}</span>
+              <div class="btn-ripple"></div>
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Info & Social Links -->
+        <div class="contact-info-section">
+          <!-- Direct Contact -->
+          <div class="contact-card">
+            <div class="card-header">
+              <h3 class="card-title">🚀 Let's Connect</h3>
+              <p class="card-subtitle">Multiple ways to reach me</p>
+            </div>
+
+            <div class="contact-methods">
+              <div class="contact-method">
+                <div class="method-icon email-icon">
+                  <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.11098 18.9943H4.78839C4.19226 19.0474 3 18.7528 3 17.1491C3 15.5454 3 9.96574 3 7.74088C3 5.51602 5.29936 5.75901 6.46066 6.62465L11.9883 10.6567L17.6323 6.48797C18.9793 5.41731 21 6.16905 21 8.44707C21 11.8185 21 15.395 21 16.7618C21 17.6502 20.7631 18.9943 18.9793 18.9943H16.889V12.2058L11.9883 15.8506L7.11098 12.2058V16.7186" stroke="#000000" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div class="method-info">
+                  <div class="method-label">Email</div>
+                  <div class="method-value">shubhambhardwaj218<span>&#64;</span>gmail.com</div>
+                </div>
+                <button class="method-action" (click)="copyToClipboard('ShubhamBhardwaj218@gmail.com')">
+                  📋
+                </button>
+              </div>
+
+              <div class="contact-method">
+                <div class="method-icon phone-icon">📱</div>
+                <div class="method-info">
+                  <div class="method-label">Phone</div>
+                  <div class="method-value">+91-7004680543</div>
+                </div>
+                <button class="method-action" (click)="copyToClipboard('+917004680543')">
+                  📋
+                </button>
+              </div>
+
+              <div class="contact-method">
+                <div class="method-icon location-icon">📍</div>
+                <div class="method-info">
+                  <div class="method-label">Location</div>
+                  <div class="method-value">Available Remotely</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Media -->
+          <div class="social-card">
+            <div class="card-header">
+              <h3 class="card-title">🌐 Social Media</h3>
+              <p class="card-subtitle">Connect with me online</p>
+            </div>
+
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/shubham-bhardwaj-75873a195" class="social-link linkedin" target="_blank">
+                <div class="social-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77Z"/></svg>
+                  </div>
+                <div class="social-info">
+                  <div class="social-platform">LinkedIn</div>
+                  <div class="social-handle"><span>&#64;</span>Shubham Bhardwaj</div>
+                </div>
+                <div class="social-arrow">→</div>
+              </a>
+
+              <a href="https://github.com/ShubhamBhardwaj218" class="social-link github" target="_blank">
+                <div class="social-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="16" width="15.5" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+              </div>
+                <div class="social-info">
+                  <div class="social-platform">GitHub</div>
+                  <div class="social-handle"><span>&#64;</span>ShubhamBhardwaj218</div>
+                </div>
+                <div class="social-arrow">→</div>
+              </a>
+
+              <a href="https://x.com/user__shubham_?t=iW_PbJ1rggfvdelLDRRbHg&s=09" class="social-link twitter" target="_blank">
+                <div class="social-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+              </div>
+                <div class="social-info">
+                  <div class="social-platform">Twitter</div>
+                  <div class="social-handle"><span>&#64;</span>user__shubham_</div>
+                </div>
+                <div class="social-arrow">→</div>
+              </a>
+
+              <a href="https://www.instagram.com/_.shubham.bhardwaj._?igsh=MTVnZHFpM2U1YXJxcA==" class="social-link instagram" target="_blank">
+                <div class="social-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3Z"/></svg>
+              </div>
+                <div class="social-info">
+                  <div class="social-platform">Instagram</div>
+                  <div class="social-handle"><span>&#64;</span>_.shubham.bhardwaj</div>
+                </div>
+                <div class="social-arrow">→</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Stats -->
+          <div class="stats-card">
+            <div class="card-header">
+              <h3 class="card-title">⚡ Quick Stats</h3>
+            </div>
+
+            <div class="stats-grid">
+              <div class="stat-item">
+                <div class="stat-number">24hr</div>
+                <div class="stat-label">Response Time</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Remote Ready</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number" style="font-size: 1rem;">{{totalExperience}}</div>
+                <div class="stat-label">Years Experience</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">∞</div>
+                <div class="stat-label">Coffee Consumed</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="contact-cta">
+        <div class="cta-content">
+          <h4 class="cta-title">Ready to start your project?</h4>
+          <p class="cta-subtitle">Let's discuss how we can bring your ideas to life</p>
+          <button class="cta-btn" (click)="scrollToForm()">
+            <span class="cta-icon">🚀</span>
+            <span class="cta-text">Start Conversation</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

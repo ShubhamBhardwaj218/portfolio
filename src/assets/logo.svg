@@ -1,0 +1,50 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f1419"/>
+      <stop offset="50%" stop-color="#1a1f2e"/>
+      <stop offset="100%" stop-color="#2d1b69"/>
+    </linearGradient>
+
+    <!-- Text gradient -->
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00b4ff"/>
+      <stop offset="100%" stop-color="#007bff"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded gradient background -->
+  <rect width="200" height="200" rx="28" fill="url(#bgGradient)"/>
+
+  <!-- < symbol (moved further left) -->
+  <text
+    x="20"
+    y="115"
+    font-family="Poppins, sans-serif"
+    font-size="60"
+    font-weight="700"
+    fill="url(#textGradient)"
+  >&lt;</text>
+
+  <!-- SB text -->
+  <text
+    x="108"
+    y="125"
+    text-anchor="middle"
+    font-family="Poppins, sans-serif"
+    font-size="68"
+    font-weight="700"
+    fill="url(#textGradient)"
+  >SB</text>
+
+  <!-- > symbol -->
+  <text
+    x="170"
+    y="115"
+    font-family="Poppins, sans-serif"
+    font-size="60"
+    font-weight="700"
+    fill="url(#textGradient)"
+  >&gt;</text>
+</svg>
