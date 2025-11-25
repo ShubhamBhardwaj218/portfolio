@@ -58,4 +58,6 @@ export class AppComponent {
       }
     }
   }
+
+  // npx angular-cli-ghpages --dir=dist/shubham-portfolio-angular/browser
 }
